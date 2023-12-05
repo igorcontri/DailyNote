@@ -10,7 +10,7 @@ export default createGlobalStyle`
     body {
         background-color: ${ ({ theme }) => theme.COLORS.BACKGROUND_800};
         color: ${ ({ theme }) => theme.COLORS.WHITE};
-
+        font-family: 'Roboto Slab', serif;
         -webkit-font-smoothing: antialised;
     }
 
