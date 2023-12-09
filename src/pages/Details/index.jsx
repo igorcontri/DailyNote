@@ -32,7 +32,7 @@ export function Details() {
             </Links>
           </Section>
 
-          <Section title="Marcadores">
+          <Section title="Tags">
             <Tag title="Lorem" />
             <Tag title="Ipsum" />
             <Tag title="Dolor" />
