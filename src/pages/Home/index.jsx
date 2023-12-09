@@ -9,13 +9,22 @@ export function Home() {
 
             <Header></Header>
 
-            <Menu></Menu>
+            <Menu>
+                <ul>
+                    <li>Todos</li>
+                    <li>Frontend</li>
+                    <li>Node</li>
+                    <li>React</li>
+                </ul>
+            </Menu>
 
             <Search></Search>
 
             <Content></Content>
 
-            <NewNote></NewNote>
+            <NewNote>
+                <h1> + Criar Nota </h1>
+            </NewNote>
         </Container>
     );
 }
