@@ -46,11 +46,6 @@ export const Menu = styled.div`
 
         line-height: 30px;
         font-size: 0.8rem;
-        color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
-
-    > ul li:first-child {
-        color: ${({ theme }) => theme.COLORS.ORANGE};
     }
 `;
 
@@ -62,7 +57,7 @@ export const Content = styled.div`
     grid-area: content;
 `;
 
-export const NewNote = styled.div`
+export const NewNote = styled.button`
     grid-area: newnote;
 
     display: flex;
@@ -70,9 +65,14 @@ export const NewNote = styled.div`
     align-items: center;
 
     background-color: ${({ theme }) => theme.COLORS.ORANGE};
+    border: none;
 
-    > h1 {
-        font-size: 1rem;
-        color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+    font-size: 1rem;
+    font-weight: bold;
+    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+    /* Fi Plus */
+    svg {
+        margin-right: 8px;
     }
 `;

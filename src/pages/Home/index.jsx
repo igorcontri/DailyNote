@@ -1,5 +1,9 @@
+import { FiPlus } from "react-icons/fi";
 import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
+
 import { Header } from "../../components/Header";
+import { ButtonText } from "../../components/ButtonText";
+
 export function Home() {
     return (
         <Container>
@@ -11,10 +15,18 @@ export function Home() {
 
             <Menu>
                 <ul>
-                    <li>Todos</li>
-                    <li>Frontend</li>
-                    <li>Node</li>
-                    <li>React</li>
+                    <li>
+                        <ButtonText title="Todos" isActive />
+                    </li>
+                    <li>
+                        <ButtonText title="Frontend" />
+                    </li>
+                    <li>
+                        <ButtonText title="Node" />
+                    </li>
+                    <li>
+                        <ButtonText title="React" />
+                    </li>
                 </ul>
             </Menu>
 
@@ -23,7 +35,8 @@ export function Home() {
             <Content></Content>
 
             <NewNote>
-                <h1> + Criar Nota </h1>
+                <FiPlus />
+                Criar Nota
             </NewNote>
         </Container>
     );
