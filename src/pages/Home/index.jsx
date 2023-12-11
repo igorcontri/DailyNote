@@ -3,6 +3,8 @@ import { Container, Brand, Menu, Search, Content, NewNote } from "./styles";
 
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
+import { Section } from "../../components/Section";
+import { Note } from "../../components/Note";
 import { ButtonText } from "../../components/ButtonText";
 
 export function Home() {
@@ -17,7 +19,7 @@ export function Home() {
             <Menu>
                 <ul>
                     <li>
-                        <ButtonText title="Todos" isActive />
+                        <ButtonText title="All" isActive />
                     </li>
                     <li>
                         <ButtonText title="Frontend" />
@@ -35,11 +37,23 @@ export function Home() {
                 <Input placeholder="Search for title" icon={FiSearch} />
             </Search>
 
-            <Content></Content>
+            <Content>
+                <Section title="Notes">
+                    <Note
+                        data={{
+                            title: "Example",
+                            tags: [
+                                { id: "1", name: "react" },
+                                { id: "2", name: "frontend" },
+                            ],
+                        }}
+                    />
+                </Section>
+            </Content>
 
             <NewNote>
                 <FiPlus />
-                Criar Nota
+                New Note
             </NewNote>
         </Container>
     );
