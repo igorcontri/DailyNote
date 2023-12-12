@@ -6,7 +6,8 @@ import theme from "./styles/theme.js";
 
 // import { Details } from './pages/Details/index.jsx'
 // import { Home } from "./pages/Home/index.jsx";
-import { SignIn } from "./pages/SignIn/index.jsx";
+// import { SignIn } from "./pages/SignIn/index.jsx";
+import { SignUp } from "./pages/SignUp/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
@@ -14,7 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <GlobalStyles />
             {/* <Details /> */}
             {/* <Home /> */}
-            <SignIn />
+            {/* <SignIn /> */}
+            <SignUp />
         </ThemeProvider>
     </React.StrictMode>
 );
