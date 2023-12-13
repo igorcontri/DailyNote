@@ -8,7 +8,8 @@ import theme from "./styles/theme.js";
 // import { Home } from "./pages/Home/index.jsx";
 // import { SignIn } from "./pages/SignIn/index.jsx";
 // import { SignUp } from "./pages/SignUp/index.jsx";
-import { Profile } from "./pages/Profile/index.jsx";
+// import { Profile } from "./pages/Profile/index.jsx";
+import { New } from "./pages/New/index.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
@@ -18,7 +19,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/* <Home /> */}
             {/* <SignIn /> */}
             {/* <SignUp /> */}
-            <Profile />
+            {/* <Profile /> */}
+            <New />
         </ThemeProvider>
     </React.StrictMode>
 );
