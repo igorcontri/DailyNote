@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
@@ -15,7 +17,7 @@ export function New() {
                 <Form>
                     <header>
                         <h1>Create new note</h1>
-                        <a href="/">back</a>
+                        <Link to="/">back</Link>
                     </header>
 
                     <Input placeholder="title" />

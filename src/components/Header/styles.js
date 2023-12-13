@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Container = styled.header`
     grid-area: header;
@@ -6,7 +7,7 @@ export const Container = styled.header`
     height: 105px;
     width: 100%;
 
-    border-bottom: 1px solid ${ ({ theme }) => theme.COLORS.BACKGROUND_700 };
+    border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
     /* background-color: lightblue; */
     display: flex;
     justify-content: space-between;
@@ -14,7 +15,7 @@ export const Container = styled.header`
     padding: 0 80px;
 `;
 
-export  const Profile = styled.div`
+export const Profile = styled(Link)`
     display: flex;
     align-items: center;
 
@@ -32,12 +33,12 @@ export  const Profile = styled.div`
 
         span {
             font-size: 0.875rem;
-            color: ${ ({ theme }) => theme.COLORS.GRAY_100 }
+            color: ${({ theme }) => theme.COLORS.GRAY_100};
         }
 
         strong {
             font-size: 1.125rem;
-            color: ${ ({ theme }) => theme.COLORS.WHITE}
+            color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }
 `;
