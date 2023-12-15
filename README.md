@@ -1,2 +1,2 @@
-# DailyNote
-Learning React
+# Notepad
+react-rocketseat
