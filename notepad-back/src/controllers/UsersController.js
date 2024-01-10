@@ -3,10 +3,10 @@ const AppError = require("../utils/AppError");
 
 const sqLiteConnection = require("../database/sqlite");
 
-/* Um controller, pode conter, no máximo, cinco funções
+/* Um controller, pode conter até cinco funções
       
-    * index - GET para listar vários registros.
-    * show - GET para exibir um registro específico
+    * index - GET para vários registros.
+    * show - GET para registros específicos
     * create - POST para criar um resgistro
     * update - PUT para atualizar um registro
     * delete - DELETE para remover um registro
@@ -38,10 +38,12 @@ class UsersController {
 
   async update(req, res) {
     const { name, email, password, old_password } = req.body;
-    const { id } = req.params;
+    const user_id = req.user.id;
 
     const database = await sqLiteConnection();
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
+    const user = await database.get("SELECT * FROM users WHERE id = (?)", [
+      user_id,
+    ]);
 
     if (!user) {
       throw new AppError("User not found.");
@@ -82,7 +84,7 @@ class UsersController {
             updated_at = DATETIME('now')
             WHERE id = ?
         `,
-      [user.name, user.email, user.password, id]
+      [user.name, user.email, user.password, user_id]
     );
 
     return res.status(200).json();
