@@ -24,14 +24,14 @@ export function SignUp() {
     api
       .post("/users", { name, email, password })
       .then(() => {
-        alert("User registered successfully");
+        alert("User Registered Successfully");
         navigate("/");
       })
       .catch((error) => {
         if (error.res) {
           alert(error.res.data.message);
         } else {
-          alert("Registration failed");
+          alert("Registration Failed");
         }
       });
   }

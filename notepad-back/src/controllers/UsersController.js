@@ -2,15 +2,6 @@ const { hash, compare } = require("bcryptjs");
 const AppError = require("../utils/AppError");
 
 const sqLiteConnection = require("../database/sqlite");
-
-/* Um controller, pode conter até cinco funções
-      
-    * index - GET para vários registros.
-    * show - GET para registros específicos
-    * create - POST para criar um resgistro
-    * update - PUT para atualizar um registro
-    * delete - DELETE para remover um registro
-*/
 class UsersController {
   async create(req, res) {
     const { name, email, password } = req.body;

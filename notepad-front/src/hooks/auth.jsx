@@ -31,6 +31,23 @@ function AuthProvider({ children }) {
 
     setData({});
   }
+
+  async function updateProfile({ user }) {
+    try {
+      await api.put("/users", user);
+      localStorage.setItem("@notepad:user", JSON.stringify(user));
+
+      setData({ user, token: data.token });
+      alert("Profile Updated Successfully ");
+    } catch (error) {
+      if (error.res) {
+        alert(error.res.data.message);
+      } else {
+        alert("Update Profile Failed");
+      }
+    }
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@notepad:token");
     const user = localStorage.getItem("@notepad:user");
@@ -50,6 +67,7 @@ function AuthProvider({ children }) {
       value={{
         signIn,
         signOut,
+        updateProfile,
         user: data.user,
       }}
     >
