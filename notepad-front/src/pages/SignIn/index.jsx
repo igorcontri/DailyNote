@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -9,8 +10,15 @@ import { Button } from "../../components/Button";
 import { Container, Form, Background } from "./styles";
 
 export function SignIn() {
-  const data = useAuth();
-  console.log("My context =>", data);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { SignIn } = useAuth();
+
+  function handleSignIn() {
+    SignIn({ email, password });
+  }
+
   return (
     <Container>
       <Form>
@@ -19,11 +27,21 @@ export function SignIn() {
 
         <h2>Log in</h2>
 
-        <Input placeholder="E-mail" type="text" icon={FiMail} />
+        <Input
+          placeholder="E-mail"
+          type="text"
+          icon={FiMail}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <Input placeholder="Password" type="password" icon={FiLock} />
+        <Input
+          placeholder="Password"
+          type="password"
+          icon={FiLock}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <Button title="Sign In" />
+        <Button title="Sign In" onClick={handleSignIn} />
 
         <Link to="/register">Create Account</Link>
       </Form>
