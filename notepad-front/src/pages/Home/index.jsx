@@ -11,7 +11,25 @@ import { Note } from "../../components/Note";
 import { ButtonText } from "../../components/ButtonText";
 
 export function Home() {
+  const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
+  const [tagsSelected, setTagsSelected] = useState([]);
+  const [notes, setNotes] = useState([]);
+
+  function handleTagSelected(tagName) {
+    if (tagName === "all") {
+      return setTagsSelected([]);
+    }
+
+    const alreadySelected = tagsSelected.includes(tagName);
+
+    if (alreadySelected) {
+      const filteredTags = tagsSelected.filter((tag) => tag !== tagName);
+      setTagsSelected(filteredTags);
+    } else {
+      setTagsSelected((prevState) => [...prevState, tagName]);
+    }
+  }
 
   useEffect(() => {
     async function fetchTags() {
@@ -21,6 +39,15 @@ export function Home() {
 
     fetchTags();
   }, []);
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const res = await api.get(`/notes?title=${search}&tags=${tagsSelected}`);
+      setNotes(res.data);
+    }
+
+    fetchNotes();
+  }, [tagsSelected, search]);
 
   return (
     <Container>
@@ -32,31 +59,37 @@ export function Home() {
 
       <Menu>
         <li>
-          <ButtonText title="All" isActive />
+          <ButtonText
+            title="All"
+            onClick={() => handleTagSelected("all")}
+            isActive={tagsSelected.length === 0}
+          />
         </li>
         {tags &&
           tags.map((tag) => (
             <li key={String(tag.id)}>
-              <ButtonText title={tag.name} />
+              <ButtonText
+                title={tag.name}
+                onClick={() => handleTagSelected(tag.name)}
+                isActive={tagsSelected.includes(tag.name)}
+              />
             </li>
           ))}
       </Menu>
 
       <Search>
-        <Input placeholder="Search for title" icon={FiSearch} />
+        <Input
+          placeholder="Search for title"
+          icon={FiSearch}
+          onChange={() => setSearch(e.target.value)}
+        />
       </Search>
 
       <Content>
         <Section title="Notes">
-          <Note
-            data={{
-              title: "Example",
-              tags: [
-                { id: "1", name: "react" },
-                { id: "2", name: "frontend" },
-              ],
-            }}
-          />
+          {notes.map((note) => (
+            <Note key={String(note.id)} data={note} />
+          ))}
         </Section>
       </Content>
 
