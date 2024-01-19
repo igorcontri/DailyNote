@@ -49,6 +49,10 @@ export function New() {
       return alert("Enter the note title");
     }
 
+    if (!description) {
+      return alert("Enter Description");
+    }
+
     if (newLink) {
       return alert("Please, click (+) to add Links or leave the field blank");
     }
