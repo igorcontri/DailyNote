@@ -1,6 +1,8 @@
 import { RiShutDownLine } from "react-icons/ri";
 import { useAuth } from "../../hooks/auth";
 
+import defaultAvatar from "../../assets/default_avatar.png";
+
 import { api } from "../../services/api";
 import { Container, Profile, Logout } from "./styles";
 
@@ -14,7 +16,10 @@ export function Header() {
   return (
     <Container>
       <Profile to="/profile">
-        <img src={avatarUrl} alt={user.name} />
+        <img
+          src={avatarUrl}
+          alt={user.name}
+        />
 
         <div>
           <span>Welcome</span>
