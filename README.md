@@ -2,9 +2,6 @@
 
 Aplicação de bloco de notas com propósitos de estudo (curso Explorer - Rocketseat)
 
-- Front-end e Back-end ainda não estão vinculados (04/01)
-- Em breve uma visualização facilitada da aplicação
-
 ### Front-end
 
 - React
