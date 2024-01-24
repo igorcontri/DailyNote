@@ -11,6 +11,8 @@ Aplicação de bloco de notas com propósitos de estudo (curso Explorer - Rocket
 - HTML
 - CSS
 - CSS in JS (styled-components)
+- API Restful
+- Hooks
 - Routes
 - eslint
 - vite
@@ -28,3 +30,4 @@ Aplicação de bloco de notas com propósitos de estudo (curso Explorer - Rocket
 - Insomnia
 - Beekeeper
 - CRUD
+- DotEnv
