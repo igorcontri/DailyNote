@@ -2,18 +2,17 @@
 
 Aplicação de bloco de notas para fins de estudo (curso Explorer - Rocketseat)
 
-### Back-end
+### Front-end
 
-- Nodejs
-- Express
-- Express-async-errors
-- SQL (SQLite, SQLite3)
-- Migrations
-- Knex
-- bcryptjs
-- nodemon
-- Insomnia
-- Beekeeper
-- CRUD
-- DotEnv
-- pm2
+- React
+- react-dom
+- react-router-dom
+- Javascript
+- HTML
+- CSS
+- CSS in JS (styled-components)
+- API Restful
+- Hooks
+- Routes
+- eslint
+- vite
