@@ -66,7 +66,10 @@ export function SignUp() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button title="Sign Up" onClick={handleSignUp} />
+        <Button
+          title="Sign Up"
+          onClick={handleSignUp}
+        />
 
         <Link to="/"> Back to Log in</Link>
       </Form>
